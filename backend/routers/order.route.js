@@ -1,0 +1,11 @@
+import express from 'express';
+import { verifyToken } from '../utils/verifyUser.js';
+import { createOrder, deleteOrder, editOrder, getLeadOrders, getorders, callOrder } from '../controllers/order.controller.js';
+const router = express.Router();
+router.post('/create',verifyToken,createOrder);
+router.get('/getLeadOrders/:leadId',getLeadOrders);
+router.put('/callOrder/:orderId',verifyToken,callOrder);
+router.put('/editOrder/:orderId',verifyToken,editOrder);
+router.delete('/deleteOrder/:orderId',verifyToken,deleteOrder);
+router.get('/getorders',verifyToken,getorders);
+export default router;
