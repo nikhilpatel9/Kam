@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { Link ,useNavigate } from "react-router-dom";
@@ -65,7 +66,7 @@ export default function SignIn() {
             <TextInput type="email" placeholder="name@company.com" id="email" onChange={handleChange}/>
           </div>
           <div>
-            <Label value='Your Password'/>
+            <Label value='New Password'/>
             <TextInput type="password" placeholder="*********" id="password" onChange={handleChange}/>
           </div>
           <Button 
@@ -87,7 +88,7 @@ export default function SignIn() {
           <OAuth/>
         </form>
         <div className="flex gap-2 text-sm mt-5">
-          <span>Dont Have an account?</span>
+          <span>Don't Have an account?</span>
           <Link to='/sign-up' className="text-blue-500">Sign Up</Link>
         </div>
         {

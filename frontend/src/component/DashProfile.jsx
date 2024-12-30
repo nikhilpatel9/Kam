@@ -1,6 +1,7 @@
 import { Alert, Button, Modal, TextInput } from 'flowbite-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState  } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   getDownloadURL,
   getStorage,
@@ -19,7 +20,7 @@ import {
   deleteUserSuccess,
   signoutSuccess,
 } from '../helper/user/userSlice';
-import { Link } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { HiOutlineExclamationCircle} from 'react-icons/hi';
 export default function DashProfile() {
@@ -34,6 +35,7 @@ export default function DashProfile() {
   const [showModel,setShowModel]=useState(false); 
   const [formData, setFormData] = useState({});
   const filePickerRef = useRef();
+  const navigate= useNavigate();
   const dispatch = useDispatch();
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -145,6 +147,7 @@ export default function DashProfile() {
             dispatch(deleteUserSuccess(data));
             // setDeleteUserSuccess("User's account deleted successfully");
             // history.push('/');
+            navigate('/')
             }
       
     } catch (error) {
@@ -161,6 +164,7 @@ export default function DashProfile() {
           console.log(data.message);
           } else {
             dispatch(signoutSuccess());
+            navigate('/')
       }
     }
     catch(error){

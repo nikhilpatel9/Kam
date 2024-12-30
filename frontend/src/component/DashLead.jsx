@@ -64,7 +64,7 @@ export default function DashLead() {
         console.log(data.message);
       } else {
         setUserLeads((prev) =>
-          prev.filter((leads) => leads._id !== postIdToDelete)
+          prev.filter((lead) => lead._id !== postIdToDelete)
         );
       }
     } catch (error) {
@@ -78,7 +78,7 @@ export default function DashLead() {
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>
-              <Table.HeadCell >Date updated</Table.HeadCell>
+              <Table.HeadCell>Date updated</Table.HeadCell>
               <Table.HeadCell>Lead image</Table.HeadCell>
               <Table.HeadCell>Lead title</Table.HeadCell>
               <Table.HeadCell>Category</Table.HeadCell>

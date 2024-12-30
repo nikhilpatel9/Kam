@@ -5,18 +5,17 @@ import { useEffect, useState } from 'react';
 import { signoutSuccess } from '../helper/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
-export default function DashSidebar() {
+export default function DashSlidebar() {
   const location = useLocation();
   const { currentUser } = useSelector(state => state.user);
   const [tab, setTab] = useState('');
   const dispatch = useDispatch();
 
   const [newCounts, setNewCounts] = useState({
-    posts: 0,
+    leads: 0,
     users: 0,
-    comments: 0,
+    orders: 0,
     messages: 0,
-    notifications: 0
   });
 
   useEffect(() => {

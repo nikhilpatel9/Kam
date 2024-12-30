@@ -1,10 +1,9 @@
 import { useLocation } from 'react-router-dom'
 import { useState ,useEffect } from 'react'
-import DashSidebar from '../component/DashSlidebar';
+import DashSlidebar from '../component/DashSlidebar';
 import DashProfile from '../component/DashProfile';
 import DashLead from '../component/DashLead';
-
- import DashOrders from '../component/DashOrders';
+import DashOrders from '../component/DashOrders';
 import DashUsers from '../component/DashUsers';
 import DashboardComp from '../component/DashboardComp';
 import DashMessages from '../component/DashMessages';
@@ -24,7 +23,7 @@ export default function Dashboard() {
    <div className='min-h-screen flex flex-col md:flex-row'>
     <div className='md:w-56'>
       {/* {} */}
-      <DashSidebar/>
+      <DashSlidebar/>
       </div>
       {/* {} */}
       {tab==='profile' && <DashProfile/>}
@@ -33,7 +32,7 @@ export default function Dashboard() {
       {/* {} */}
       {tab==='users'&&<DashUsers/>}
       {/* {} */}
-      {tab=== 'orders' && <DashOrders/>}
+      {tab==='orders' && <DashOrders/>}
       {/* {} */}
       {tab==='dash' &&<DashboardComp/>}
       {/* {} */}

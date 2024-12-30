@@ -5,6 +5,7 @@
         "getorders",
         "getusers",
         "persistor",
+        "Slidebar",
         "updatelead"
     ]
 }
